@@ -2,9 +2,10 @@ package com.company;
 
 import static com.company.Die.*;
 
-public class YatziMain {
+public class YahtzeeMain {
 
     public static void main(String[] args) {
-            StartGame();
+        System.out.println("Welcome to Yahtzee!");
+        StartGame();
     }
 }
