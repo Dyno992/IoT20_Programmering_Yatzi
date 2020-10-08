@@ -5,10 +5,10 @@ class Die extends com.company.BoardGameMaterial {
     static Die[] dice;
 
     private Die() {
-        value = (int) Math.random();
+        roll();
     }
 
-    void dieRoll() {
+    void roll() {
         value = (int) (Math.random() * 6 + 1);
     }
 
