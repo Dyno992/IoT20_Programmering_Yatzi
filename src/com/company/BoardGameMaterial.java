@@ -15,15 +15,16 @@ class BoardGameMaterial {
     static void StartGame() {
         CreateDice();
         boolean isGameOn = true;
-        while (isGameOn && turn < 3) {
-
-            System.out.println("Starting turn " + (turn + 1) + " of 3, rolling dice.");
-            for (int i = 0; i < dice.length; i++) {
-                dice[i].DieRoll();
-                //dice[i].value = 5; //Test if yatzi work
-                System.out.println(i + ": " + "Dice Shows " + dice[i].value);
+        while (isGameOn) {
+            while (turn < 3) {
+                System.out.println("Starting turn " + (turn + 1) + " of 3, rolling dice.");
+                for (int i = 0; i < dice.length; i++) {
+                    dice[i].DieRoll();
+                    //dice[i].value = 5; //Test if yatzi work
+                    System.out.println(i + ": " + "Dice Shows " + dice[i].value);
+                }
+                CheckIfYahtzee(dice);
             }
-            CheckIfYahtzee(dice);
         }
     }
 
