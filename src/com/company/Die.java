@@ -5,14 +5,14 @@ class Die extends com.company.BoardGameMaterial {
     static Die[] dice;
 
     private Die() {
-        value = (int) Math.random();
+        roll();
     }
 
-    void DieRoll() {
+    void roll() {
         value = (int) (Math.random() * 6 + 1);
     }
 
-    static void CreateDice() {
+    static void createDice() {
         dice = new Die[5];
         for (int i = 0; i < 5; i++) {
             dice[i] = new Die();

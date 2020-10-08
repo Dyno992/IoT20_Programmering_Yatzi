@@ -8,11 +8,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class YahtzeeTest {
     @Test
     void isYahtzeeWhenAllDiceMatches() {
-        Die.CreateDice();
+        Die.createDice();
         for (int i = 0; i < dice.length; i++) {
             dice[i].value = 5;
         }
-        assertTrue(true, BoardGameMaterial.CheckIfYahtzee(dice));
+        assertTrue(true, BoardGameMaterial.checkIfYahtzee(dice));   // Detta funkar ej
+
     }
 
    // @Test

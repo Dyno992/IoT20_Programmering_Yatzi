@@ -6,29 +6,29 @@ import static com.company.Die.*;
 
 class BoardGameMaterial {
     private static int turn;
-    public static boolean yahtzee = true;
 //    private static boolean GameOn() {
 //        System.out.println("Welcome to Yatzi!");
 //        return true;
 //    }
 
-    static void StartGame() {
-        CreateDice();
+    static void startGame() {
+        createDice();
         boolean isGameOn = true;
         while (isGameOn) {
             while (turn < 3) {
                 System.out.println("Starting turn " + (turn + 1) + " of 3, rolling dice.");
                 for (int i = 0; i < dice.length; i++) {
-                    dice[i].DieRoll();
+                    dice[i].roll();
                     //dice[i].value = 5; //Test if yatzi work
                     System.out.println(i + ": " + "Dice Shows " + dice[i].value);
                 }
-                CheckIfYahtzee(dice);
+                checkIfYahtzee(dice);
             }
         }
     }
 
-    static String CheckIfYahtzee(Die[] dice) {
+    static String checkIfYahtzee(Die[] dice) {
+        boolean yahtzee = true;
         for (int j = 1; j < 5; j++) {
             if (dice[j].value != dice[j - 1].value) {
                 yahtzee = false;
@@ -40,12 +40,12 @@ class BoardGameMaterial {
             System.out.println("Program Ending...");
             System.exit(0);
         } else {
-            NotYahtzee();
+            notYahtzee();
         }
         return null;
     }
 
-    private static void NotYahtzee() {
+    private static void notYahtzee() {
         if (turn != 2) {
             System.out.println("Want to throw again? (y for yes, anything else for no)");
             Scanner sc = new Scanner(System.in);
@@ -56,11 +56,11 @@ class BoardGameMaterial {
                 System.exit(0);
             }
         } else {
-            GameOver();
+            gameOver();
         }
     }
 
-    private static void GameOver() {
+    private static void gameOver() {
         System.out.println("Game over! Want to play again?");
         Scanner sc = new Scanner(System.in);
         if (sc.next().equals("y")) {
