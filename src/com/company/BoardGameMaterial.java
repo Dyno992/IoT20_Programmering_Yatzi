@@ -6,7 +6,6 @@ import static com.company.Die.*;
 
 class BoardGameMaterial {
     private static int turn;
-    public static boolean yahtzee = true;
 //    private static boolean GameOn() {
 //        System.out.println("Welcome to Yatzi!");
 //        return true;
@@ -29,6 +28,7 @@ class BoardGameMaterial {
     }
 
     static String checkIfYahtzee(Die[] dice) {
+        boolean yahtzee = true;
         for (int j = 1; j < 5; j++) {
             if (dice[j].value != dice[j - 1].value) {
                 yahtzee = false;
