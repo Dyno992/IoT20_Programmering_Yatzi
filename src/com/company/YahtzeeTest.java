@@ -12,17 +12,17 @@ public class YahtzeeTest {
         for (int i = 0; i < dice.length; i++) {
             dice[i].value = 5;
         }
-        assertTrue(true, BoardGameMaterial.checkIfYahtzee(dice));   // Detta funkar ej
+        assertTrue(BoardGameMaterial.checkIfYahtzee(dice));   // Detta funkar ej
 
     }
 
-   // @Test
-//    void isNotYahtzeeWhenOneDieIsNotMatchingTheOther() {
-//        Die.CreateDice();
-//        for (int i = 0; i < dice.length; i++) {
-//            dice[i].value = 5;
-//        }
-//        dice[1].value = 1;
-//        assertFalse(true, BoardGameMaterial.CheckIfYahtzee(dice));
-//    }
+    @Test
+    void isNotYahtzeeWhenOneDieIsNotMatchingTheOther() {
+        Die.createDice();
+        for (int i = 0; i < dice.length; i++) {
+            dice[i].value = 5;
+        }
+        dice[1].value = 1;
+        assertFalse(BoardGameMaterial.checkIfYahtzee(dice));
+    }
 }
