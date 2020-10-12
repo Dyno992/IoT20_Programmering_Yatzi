@@ -7,7 +7,7 @@ import static com.company.Die.*;
 class BoardGameMaterial {
     private static int turn;
 
-    public static void startGame() {
+     static void startGame() {
         boolean game = true;
         createDice();
         while (game && turn < 3) {
@@ -20,7 +20,7 @@ class BoardGameMaterial {
         }
     }
 
-    public static boolean checkIfYahtzee(Die[] dice) {
+     static boolean checkIfYahtzee(Die[] dice) {
         boolean yahtzee =  true;
         for (int j = 1; j < 5; j++) {
             if (dice[j].value != dice[j - 1].value) {
@@ -30,7 +30,7 @@ class BoardGameMaterial {
         }return yahtzee;
     }
 
-    public static void nextRound() {
+    static void nextRound() {
         if (turn != 2) {
             System.out.println("Want to throw again? (y for yes, anything else for no)");
             Scanner sc = new Scanner(System.in);
@@ -44,7 +44,7 @@ class BoardGameMaterial {
         }
     }
 
-    public static void gameOver() {
+    static void gameOver() {
         System.out.println("Game over! Want to play again?");
         Scanner sc = new Scanner(System.in);
         if (sc.next().equals("y")) {

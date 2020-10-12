@@ -9,8 +9,8 @@ public class YahtzeeTest {
     @Test
     void isYahtzeeWhenAllDiceMatches() {
         Die.createDice();
-        for (int i = 0; i < dice.length; i++) {
-            dice[i].value = 5;
+        for (Die die : dice) {
+            die.value = 5;
         }
         assertTrue(BoardGameMaterial.checkIfYahtzee(dice));   // Detta funkar ej
 
@@ -19,8 +19,8 @@ public class YahtzeeTest {
     @Test
     void isNotYahtzeeWhenOneDieIsNotMatchingTheOther() {
         Die.createDice();
-        for (int i = 0; i < dice.length; i++) {
-            dice[i].value = 5;
+        for (Die die : dice) {
+            die.value = 5;
         }
         dice[1].value = 1;
         assertFalse(BoardGameMaterial.checkIfYahtzee(dice));
