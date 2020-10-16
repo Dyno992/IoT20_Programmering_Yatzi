@@ -1,10 +1,9 @@
 package com.company;
 
-class Die extends com.company.BoardGameMaterial {
+class Die  {
     int value;
-    static Die[] dice;
 
-    private Die() {
+    Die() {
         roll();
     }
 
@@ -12,10 +11,10 @@ class Die extends com.company.BoardGameMaterial {
         value = (int) (Math.random() * 6 + 1);
     }
 
-    static void createDice() {
+/*    static void createDice() {
         dice = new Die[5];
         for (int i = 0; i < 5; i++) {
             dice[i] = new Die();
         }
-    }
+    }*/
 }
